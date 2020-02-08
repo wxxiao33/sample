@@ -14,9 +14,10 @@ class InstructorsTest < ApplicationSystemTestCase
     visit instructors_url
     click_on "New Instructor"
 
+    fill_in "Comment", with: @instructor.comment
     fill_in "Email", with: @instructor.email
     fill_in "First", with: @instructor.first
-    fill_in "Id", with: @instructor.id
+    fill_in "Instructor", with: @instructor.instructor_id
     fill_in "Last", with: @instructor.last
     fill_in "Middle", with: @instructor.middle
     click_on "Create Instructor"
@@ -29,9 +30,10 @@ class InstructorsTest < ApplicationSystemTestCase
     visit instructors_url
     click_on "Edit", match: :first
 
+    fill_in "Comment", with: @instructor.comment
     fill_in "Email", with: @instructor.email
     fill_in "First", with: @instructor.first
-    fill_in "Id", with: @instructor.id
+    fill_in "Instructor", with: @instructor.instructor_id
     fill_in "Last", with: @instructor.last
     fill_in "Middle", with: @instructor.middle
     click_on "Update Instructor"

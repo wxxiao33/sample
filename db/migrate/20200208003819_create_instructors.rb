@@ -1,11 +1,12 @@
 class CreateInstructors < ActiveRecord::Migration[6.0]
   def change
-    create_table :instructors, id:false do |t|
-      t.primary_key :id
-      t.string :last
-      t.string :middle
+    create_table :instructors do |t|
+      t.string :instructor_id
       t.string :first
+      t.string :middle
+      t.string :last
       t.string :email
+      t.string :comment
 
       t.timestamps
     end
