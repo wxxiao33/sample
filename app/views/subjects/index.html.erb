@@ -8,7 +8,8 @@
     <tr>
       <th>Subject</th>
       <th>Name</th>
-      <th>Abbreviation</th>
+      <%# Abbreviation is the same as name in the json file, so don't show%>
+      <%# <th>Abbreviation</th> %>
       <th>Segments</th>
       <% if false %>
       <th>Term</th>
@@ -23,7 +24,9 @@
       <tr>
         <td><%= subject.subject_id %></td>
         <td><%= subject.name %></td>
+        <% if false %>
         <td><%= subject.abbreviation %></td>
+        <% end %>
         <td><%= subject.segments %></td>
         <% if false %>
         <td><%= subject.term %></td>

@@ -11,10 +11,10 @@
       <th>Code</th>
       <th>Name</th>
       <th>Subjects</th>
+      <%# <th>Description</th> %>
+      <%# <th>Requirements</th>  %>
+      <%# <th>Independent study</th> %>
       <%# <th>Credits</th> %>
-      <th>Independent study</th>
-      <th>Description</th>
-      <th>Requirements</th>
       <%# <th>Term</th> %>
       <%# <th>Continuity</th> %>
       <%# <th>Comment</th> %>
@@ -32,12 +32,10 @@
         <td><%= course.name %></td>
         <td><%= course.subjects %></td>
         <% if false %>
-        <td><%= course.credits %></td>
-        <% end %>
-        <td><%= course.independent_study %></td>
         <td><%= course.description %></td>
         <td><%= course.requirements %></td>
-        <% if false %>
+        <td><%= course.independent_study %></td>
+        <td><%= course.credits %></td>
         <td><%= course.term %></td>
         <td><%= course.continuity_id %></td>
         <td><%= course.comment %></td>

@@ -70,7 +70,7 @@ course_hash.each do |course|
                 continuity_id: course['continuity_id'], description: course['description'],
                 independent_study: course['independent_study'], comment: course["comment"],
                 requirements: course['requirements'].join(', '),
-                subjects: course["subjects"].map{ |sub| "#{sub["id"]}: #{sub["segment"]}"}.join("\n")
+                subjects: course["subjects"].map{ |sub| "#{sub["id"]}: #{sub["segment"]}"}.join(" | ")
                 })
 end
 # import all the array of hashes by active-import
