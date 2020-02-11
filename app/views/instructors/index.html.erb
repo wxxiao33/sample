@@ -8,10 +8,12 @@
     <tr>
       <th>Instructor</th>
       <th>First</th>
-      <th>Middle</th>
+      <%# comment out Middle and Comment because they are not in the json %>
+      <%# <th>Middle</th> %>
       <th>Last</th>
       <th>Email</th>
-      <th>Comment</th>
+      <%#<th>Comment</th> %>
+      
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -21,10 +23,15 @@
       <tr>
         <td><%= instructor.instructor_id %></td>
         <td><%= instructor.first %></td>
+        <%# comment out Middle and Comment because they are not in the json %>
+        <% if false %>
         <td><%= instructor.middle %></td>
+        <% end %>
         <td><%= instructor.last %></td>
         <td><%= instructor.email %></td>
+        <% if false %>
         <td><%= instructor.comment %></td>
+        <% end %>
         <td><%= link_to 'Show', instructor %></td>
         <td><%= link_to 'Edit', edit_instructor_path(instructor) %></td>
         <td><%= link_to 'Destroy', instructor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
