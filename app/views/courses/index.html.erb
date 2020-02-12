@@ -1,4 +1,3 @@
-<% provide(:title, "Courses") %>
 <p id="notice"><%= notice %></p>
 
 <h1>Courses</h1>
@@ -6,18 +5,18 @@
 <table>
   <thead>
     <tr>
-      <%# conmmet out columns not exists in the json file %>
-      <%# <th>Course</th> %>
+      <%# only show code name and subjects for a course %>
       <th>Code</th>
       <th>Name</th>
       <th>Subjects</th>
       <%# <th>Description</th> %>
-      <%# <th>Requirements</th>  %>
-      <%# <th>Independent study</th> %>
-      <%# <th>Credits</th> %>
-      <%# <th>Term</th> %>
-      <%# <th>Continuity</th> %>
-      <%# <th>Comment</th> %>
+      <%# <th>Independent study</th>
+      <th>Requirements</th> %>
+      <%# <th>Credits</th>
+      <th>Course</th>
+      <th>Term</th>
+      <th>Continuity</th>
+      <th>Comment</th> %>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -25,17 +24,16 @@
   <tbody>
     <% @courses.each do |course| %>
       <tr>
-        <% if false %>
-        <td><%= course.course_id %></td>
-        <% end %>
         <td><%= course.code %></td>
         <td><%= course.name %></td>
-        <td><%= course.subjects %></td>
+        <td><%= course.subjects_info %></td>
         <% if false %>
         <td><%= course.description %></td>
-        <td><%= course.requirements %></td>
         <td><%= course.independent_study %></td>
+        <td><%= course.requirements %></td>
         <td><%= course.credits %></td>
+        <td><%= course.code %></td>
+        <td><%= course.name %></td>
         <td><%= course.term %></td>
         <td><%= course.continuity_id %></td>
         <td><%= course.comment %></td>

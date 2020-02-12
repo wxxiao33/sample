@@ -23,7 +23,7 @@ class CoursesTest < ApplicationSystemTestCase
     check "Independent study" if @course.independent_study
     fill_in "Name", with: @course.name
     fill_in "Requirements", with: @course.requirements
-    fill_in "Subjects", with: @course.subjects
+    fill_in "Subjects info", with: @course.subjects_info
     fill_in "Term", with: @course.term
     click_on "Create Course"
 
@@ -44,7 +44,7 @@ class CoursesTest < ApplicationSystemTestCase
     check "Independent study" if @course.independent_study
     fill_in "Name", with: @course.name
     fill_in "Requirements", with: @course.requirements
-    fill_in "Subjects", with: @course.subjects
+    fill_in "Subjects info", with: @course.subjects_info
     fill_in "Term", with: @course.term
     click_on "Update Course"
 

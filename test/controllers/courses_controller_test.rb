@@ -17,7 +17,7 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create course" do
     assert_difference('Course.count') do
-      post courses_url, params: { course: { code: @course.code, comment: @course.comment, continuity_id: @course.continuity_id, course_id: @course.course_id, credits: @course.credits, description: @course.description, independent_study: @course.independent_study, name: @course.name, requirements: @course.requirements, subjects: @course.subjects, term: @course.term } }
+      post courses_url, params: { course: { code: @course.code, comment: @course.comment, continuity_id: @course.continuity_id, course_id: @course.course_id, credits: @course.credits, description: @course.description, independent_study: @course.independent_study, name: @course.name, requirements: @course.requirements, subjects_info: @course.subjects_info, term: @course.term } }
     end
 
     assert_redirected_to course_url(Course.last)
@@ -34,7 +34,7 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update course" do
-    patch course_url(@course), params: { course: { code: @course.code, comment: @course.comment, continuity_id: @course.continuity_id, course_id: @course.course_id, credits: @course.credits, description: @course.description, independent_study: @course.independent_study, name: @course.name, requirements: @course.requirements, subjects: @course.subjects, term: @course.term } }
+    patch course_url(@course), params: { course: { code: @course.code, comment: @course.comment, continuity_id: @course.continuity_id, course_id: @course.course_id, credits: @course.credits, description: @course.description, independent_study: @course.independent_study, name: @course.name, requirements: @course.requirements, subjects_info: @course.subjects_info, term: @course.term } }
     assert_redirected_to course_url(@course)
   end
 

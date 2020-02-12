@@ -14,6 +14,8 @@ Each page show the information for all members.
 
   The database contains three tables, courses, subjects and instructors. Each table has columns specified by the data source. Some of the columns are not existing in the json file, I still create them in the table, in case we need them later. But they are not shown on the webpages
 
+  A Part table is create to represent the many to many relation between courses and subjects
+
 * Database initialization
 
   The data is extracted from 3 JSON files, each of them contains an array of hashes. And each hash is a data entree. The json file is stored in ./datafile

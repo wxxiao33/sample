@@ -4,7 +4,7 @@ class CreateCourses < ActiveRecord::Migration[6.0]
       t.string :course_id
       t.string :code
       t.string :name
-      t.string :subjects
+      t.string :subjects_info
       t.float :credits
       t.boolean :independent_study
       t.string :description

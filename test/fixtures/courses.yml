@@ -4,7 +4,7 @@ one:
   course_id: MyString
   code: MyString
   name: MyString
-  subjects: MyString
+  subjects_info: MyString
   credits: 1.5
   independent_study: false
   description: MyString
@@ -17,7 +17,7 @@ two:
   course_id: MyString
   code: MyString
   name: MyString
-  subjects: MyString
+  subjects_info: MyString
   credits: 1.5
   independent_study: false
   description: MyString
