@@ -4,7 +4,7 @@ This is the first part of pa rails, a course select website.
 This version provides a home page, which contains links to courses, subjects and instructors page
 Each page show the information for all members.
 
-- Github: https://github.com/wxxiao33/sample.git
+- Github: http://github.com/wxxiao33/sample.git
 
 - Heroku: https://cryptic-plains-02329.herokuapp.com/
 
