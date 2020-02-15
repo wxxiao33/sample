@@ -2,44 +2,36 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Instructors</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Instructor</th>
-      <th>First</th>
-      <%# comment out Middle and Comment because they are not in the json %>
-      <%# <th>Middle</th> %>
-      <th>Last</th>
-      <th>Email</th>
-      <%#<th>Comment</th> %>
-      
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @instructors.each do |instructor| %>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead class="thead-dark">
       <tr>
-        <td><%= instructor.instructor_id %></td>
-        <td><%= instructor.first %></td>
-        <%# comment out Middle and Comment because they are not in the json %>
-        <% if false %>
-        <td><%= instructor.middle %></td>
-        <% end %>
-        <td><%= instructor.last %></td>
-        <td><%= instructor.email %></td>
-        <% if false %>
-        <td><%= instructor.comment %></td>
-        <% end %>
-        <td><%= link_to 'Show', instructor %></td>
-        <td><%= link_to 'Edit', edit_instructor_path(instructor) %></td>
-        <td><%= link_to 'Destroy', instructor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Instructor</th>
+        <th>First</th>
+        <th>Last</th>
+        <th>Email</th>
+        <th>Comment</th>
+        
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
+    <tbody>
+      <% @instructors.each do |instructor| %>
+        <tr>
+          <td><%= instructor.instructor_id %></td>
+          <td><%= instructor.first %></td>
+          <td><%= instructor.last %></td>
+          <td><%= instructor.email %></td>
+          <td><%= instructor.comment %></td>
+          <td><%= link_to 'Show', instructor %></td>
+          <td><%= link_to 'Edit', edit_instructor_path(instructor) %></td>
+          <td><%= link_to 'Destroy', instructor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <br>
 
 <%= link_to 'New Instructor', new_instructor_path %>
