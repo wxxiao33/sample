@@ -11,4 +11,9 @@ Rails.application.routes.draw do
   get '/instructors', to: 'instructors#index'
   get '/courses', to: 'courses#index'
   get '/subjects', to: 'instructors#index'
+  get '/signup', to: 'users#new'
+  # get    '/login',   to: 'sessions#new'
+  # post   '/login',   to: 'sessions#create'
+  # delete '/logout',  to: 'sessions#destroy'
+  resources :users
 end
