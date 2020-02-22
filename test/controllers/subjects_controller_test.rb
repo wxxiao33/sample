@@ -38,11 +38,11 @@ class SubjectsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to subject_url(@subject)
   end
 
-  test "should destroy subject" do
-    assert_difference('Subject.count', -1) do
-      delete subject_url(@subject)
-    end
+  # test "should destroy subject" do
+  #   assert_difference('Subject.count', -1) do
+  #     delete subject_url(@subject)
+  #   end
 
-    assert_redirected_to subjects_url
-  end
+  #   assert_redirected_to subjects_url
+  # end
 end

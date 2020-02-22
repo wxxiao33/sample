@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :enrollments
+  get 'users/new'
   resources :parts
   resources :courses
   get 'static_pages/home'

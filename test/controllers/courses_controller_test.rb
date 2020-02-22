@@ -38,11 +38,11 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to course_url(@course)
   end
 
-  test "should destroy course" do
-    assert_difference('Course.count', -1) do
-      delete course_url(@course)
-    end
+  # test "should destroy course" do
+  #   assert_difference('Course.count', -1) do
+  #     delete course_url(@course)
+  #   end
 
-    assert_redirected_to courses_url
-  end
+  #   assert_redirected_to courses_url
+  # end
 end

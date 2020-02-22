@@ -24,10 +24,20 @@ gem 'jbuilder', '~> 2.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+# gem 'minitest', '5.10.3'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
- 
+
+
+gem 'pry-byebug'
+gem 'better_errors'
+gem 'awesome_print'
+gem 'faker'
+gem 'hirb'
+gem 'bcrypt',     '3.1.13'
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -43,10 +53,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'json'
   gem 'activerecord-import'
-  gem "better_errors"
   gem "pry-rails"
-  gem 'hirb'
-  gem 'faker'
 end
 
 group :test do
@@ -55,6 +62,11 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'rails-controller-testing', '1.0.4'
+  gem 'minitest',                 '5.11.3'
+  gem 'minitest-reporters',       '1.3.8'
+  gem 'guard',                    '2.15.0'
+  gem 'guard-minitest',           '2.4.6'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
