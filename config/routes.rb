@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get '/courses', to: 'courses#index'
   get '/subjects', to: 'instructors#index'
   get '/signup', to: 'users#new'
+  # work around for refreshing invalid sign up
+  get '/users', to: 'users#new'
   # get    '/login',   to: 'sessions#new'
   # post   '/login',   to: 'sessions#create'
   # delete '/logout',  to: 'sessions#destroy'
