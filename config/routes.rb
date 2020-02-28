@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
   resources :enrollments
   get 'users/new'
   resources :parts
@@ -14,8 +15,8 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
   # work around for refreshing invalid sign up
   get '/users', to: 'users#new'
-  # get    '/login',   to: 'sessions#new'
-  # post   '/login',   to: 'sessions#create'
-  # delete '/logout',  to: 'sessions#destroy'
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
   resources :users
 end

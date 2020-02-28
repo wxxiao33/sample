@@ -10,30 +10,29 @@
         <li class="nav-item">
           <%= link_to "Home", root_path, class: "nav-link active" %> <span class="sr-only">(current)</span>
         </li>
-        <% logged_in = false %>
-        <% if logged_in%>
-        <li class="nav-item dropdown active">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Account
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <div class="dropdown-item"><%= link_to "Profile", '#' %></div>
-            <div class="dropdown-item"><%= link_to "My class", '#' %></div>
-            <div class="dropdown-divider"></div>
-            <div class="dropdown-item"><%= link_to "Logout", '#' %></div>
-          </div>
-        </li>
+        <% if logged_in? %>
+          <li class="nav-item dropdown active">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Account
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <div class="dropdown-item"><%= link_to "Profile", current_user %></div>
+              <div class="dropdown-item"><%= link_to "My class", '#' %></div>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-item"><%= link_to "Logout", logout_path %></div>
+            </div>
+          </li>
         <% else %>
-        <li class="nav-item">
-          <%= link_to "Log in", root_path, class: "nav-link active" %>
-        </li>
-      <% end %>
+          <li class="nav-item">
+            <%= link_to "Log in", login_path, class: "nav-link active" %>
+          </li>
+        <% end %>
       </ul>
 
-      <% if logged_in%>
+      <% if logged_in? %>
       <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+        <input class="form-control mr-sm-2 mt-3" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>    
       </form>
       <% end %>
     </div>
