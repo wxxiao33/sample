@@ -19,7 +19,7 @@
               <div class="dropdown-item"><%= link_to "Profile", current_user %></div>
               <div class="dropdown-item"><%= link_to "My class", '#' %></div>
               <div class="dropdown-divider"></div>
-              <div class="dropdown-item"><%= link_to "Logout", logout_path %></div>
+              <div class="dropdown-item"><%= link_to "Log out", logout_path, method: :delete %></div>
             </div>
           </li>
         <% else %>
