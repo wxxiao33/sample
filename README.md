@@ -14,7 +14,7 @@ Each page show the information for all members.
 
   The database contains three tables, courses, subjects and instructors. Each table has columns specified by the data source. Some of the columns are not existing in the json file, I still create them in the table, in case we need them later. But they are not shown on the webpages
 
-  A Part table is create to represent the many to many relation between courses and subjects
+  A Part table is create to represent the many to many relation between courses and subjects. An enrollment table is create to represent many to many relationship between user and courses
 
 * Database initialization
 
@@ -22,8 +22,14 @@ Each page show the information for all members.
 
 * Services
 
-  For now this app only provides information for courses, subjects and instructors
+  This app provides information for courses, subjects and instructors for logged in users. All vistors need to sign up and login first to view any content.
 
-* Deployment instructions
+  The home page contains links to view all courses, subjects and instructors. And all enrolled courses for logged in user will be display in the homepage.
+
+  There is a search form containing a dropdown menu and a text field in the header. All search information need to be enter here. Each row in the search result contains a details button and an enroll button. Users can use the enroll buttoAn to select courses.
+
+  The drop function is not implemented yet, but it could be done by adding a button routing to "enrollments#destroy"
+
+- Deployment instructions
 
   Push the repo on to heroku, along with the database seeded by db/seed.rb
