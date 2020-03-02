@@ -37,13 +37,16 @@
         </thead>
 
         <tbody>
-          <% @courses.each do |course| %>
+          
+          <% @enrollments.each do |enrollment| %>
+            <% course = Course.find(enrollment.course.id) %>
             <tr>
               <td><%= course.code %></td>
               <td><%= course.name %></td>
               <td><%= course.subjects_info %></td>
               <td><%= course.description %></td>
-              <td> <%= link_to 'Details', course, class: "btn btn-outline-info my-2 my-sm-0", type: "submit"%> </td>
+              <td><%= link_to 'Details', course, class: "btn btn-outline-info my-2 my-sm-0", type: "submit"%> </td>
+              <td><%= link_to 'Drop', enrollment, method: :delete, class: "btn btn-outline-info my-2 my-sm-0", type: "submit", data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>
         </tbody>

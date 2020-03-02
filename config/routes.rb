@@ -22,5 +22,6 @@ Rails.application.routes.draw do
   get '/logout',  to: 'sessions#destroy'
   get '/search' => 'static_pages#search', :as => 'search_page'
   post '/enroll', to: "enrollments#create"
+  delete '/drop', to: "enrollments#destroy"
   resources :users
 end

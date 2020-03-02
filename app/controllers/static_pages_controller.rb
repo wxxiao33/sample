@@ -4,6 +4,7 @@ class StaticPagesController < ApplicationController
   def home
     if current_user
       enrollment_ids = Enrollment.where(user_id: current_user.id).pluck(:course_id)
+      @enrollments = Enrollment.where(user_id: current_user.id)
       @courses = Course.where(id: enrollment_ids)
     end
   end
