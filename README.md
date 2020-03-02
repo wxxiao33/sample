@@ -26,9 +26,9 @@ Each page show the information for all members.
 
   The home page contains links to view all courses, subjects and instructors. And all enrolled courses for logged in user will be display in the homepage.
 
-  There is a search form containing a dropdown menu and a text field in the header. All search information need to be enter here. Each row in the search result contains a details button and an enroll button. Users can use the enroll buttoAn to select courses.
+  There is a search form containing a dropdown menu and a text field in the header. All search information need to be enter here. Each row in the search result contains a details button and an enroll button. Users can use the enroll buttoAn to select courses. A validation is added to make sure a user cannot enroll the same course twice. The search is case insensitive.
 
-  The drop function is not implemented yet, but it could be done by adding a button routing to "enrollments#destroy"
+  Dropping a course is also implemented. Dropping can be done by using the "Drop" button on the homepage.
 
 - Deployment instructions
 
