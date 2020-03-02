@@ -8,32 +8,38 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <%= link_to "Home", root_path, class: "nav-link active" %> <span class="sr-only">(current)</span>
+          <%= link_to "Home", root_path, class: "nav-link active text-nowrap" %> <span class="sr-only">(current)</span>
         </li>
         <% if logged_in? %>
-          <li class="nav-item dropdown active">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Account
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <div class="dropdown-item"><%= link_to "Profile", current_user %></div>
-              <div class="dropdown-item"><%= link_to "My class", '#' %></div>
-              <div class="dropdown-divider"></div>
-              <div class="dropdown-item"><%= link_to "Log out", logout_path, method: :delete %></div>
-            </div>
-          </li>
+
+        <li class="nav-item">
+          <%= link_to "Profile", current_user, class: "nav-link active text-nowrap" %> <span class="sr-only">(current)</span>
+        </li>
+        
+        <hr />
+        <li class="nav-item">
+          <%= link_to "LogOut", logout_path, class: "nav-link active text-nowrap" %> <span class="sr-only">(current)</span>
+        </li>
+
         <% else %>
           <li class="nav-item">
-            <%= link_to "Log in", login_path, class: "nav-link active" %>
+            <%= link_to "Log in", login_path, class: "nav-link active text-nowrap" %>
           </li>
         <% end %>
       </ul>
 
+      <%# The search form, including a dropdown menu and a text search field %>
       <% if logged_in? %>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2 mt-3" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>    
-      </form>
+      <%= form_tag(search_page_path, :method => "get",   class: 'form-inline my-2 my-lg-0 justify-content-end') do %>  
+        <div class="input-group col-md-6 col-md-offset-3">
+          <%= form_with(model: @subject, local: true) do |f| %>
+            <%= f.select(:subject_id, Subject.all.collect {|s| [s.name, s.id] },  {prompt: "Select"}, {class: 'form-control'}) %>
+          <% end %>
+          <%= search_field_tag :search_text, params[:search_text], placeholder: "Search", class: "form-control mr-sm-2" %>  
+          <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+        </div>  
+      <% end %>
+
       <% end %>
     </div>
   </nav>

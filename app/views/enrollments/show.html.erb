@@ -1,14 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @enrollment.user_id %>
-</p>
+<div class="table-responsive">
+  <table class="table table-hover">
+      <thead class="thead-dark">
+      <tr>
+        <th>Student</th>
+        <th>Course Code</th>
+        <th>Course Name</th>
+        <th colspan="3"></th>
+      </tr>
+      </thead>
 
-<p>
-  <strong>Course:</strong>
-  <%= @enrollment.course_id %>
-</p>
+      <tbody>
+        <tr>
+          <td><%= User.find(@enrollment.user_id).name %></td>
+          <td><%= Course.find(@enrollment.course_id).code %></td>
+          <td><%= Course.find(@enrollment.course_id).name %></td>
+        <tr>
+      </tbody>
+  </table>
+</div>
 
-<%= link_to 'Edit', edit_enrollment_path(@enrollment) %> |
 <%= link_to 'Back', enrollments_path %>

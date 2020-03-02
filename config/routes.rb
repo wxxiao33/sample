@@ -15,10 +15,12 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
   # work around for refreshing invalid sign up
   get '/users', to: 'users#new'
-  get    '/login',   to: 'sessions#new'
-  post   '/login',   to: 'sessions#create'
+  get '/login',   to: 'sessions#new'
+  post '/login',   to: 'sessions#create'
 
   # work around for jquery and turbolink not working
   get '/logout',  to: 'sessions#destroy'
+  get '/search' => 'static_pages#search', :as => 'search_page'
+  post '/enroll', to: "enrollments#create"
   resources :users
 end

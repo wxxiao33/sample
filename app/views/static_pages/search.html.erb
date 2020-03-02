@@ -1,0 +1,44 @@
+<% provide(:title, "Class Search") %>
+<p id="notice"><%= notice %></p>
+
+<h1>Courses</h1>
+
+<div class="table-responsive">
+  <table class="table table-hover">
+      <thead class="thead-dark">
+      <tr>
+        <%# only show code name and subjects for a course %>
+        <th>Id</th>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Subjects</th>
+        <th>Description</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @courses.each do |course| %>
+        <tr>
+          <td><%= course.id %></td>
+          <td><%= course.code %></td>
+          <td><%= course.name %></td>
+          <td><%= course.subjects_info %></td>
+          <td><%= course.description %></td>
+          <td>
+            <%= link_to 'Details', course, class: "btn btn-outline-info my-2 my-sm-0", type: "submit"%></td>
+          </td>
+
+          <td>
+            <%# The enroll buttom %>
+            <%= link_to 'Enroll', enroll_path(@enrollment, enrollment: {user_id: current_user.id, course_id: course.id}),
+                                method: :post, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-info my-2 my-sm-0",
+                                type: "submit"%></td>
+          </td>
+
+
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

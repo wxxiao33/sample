@@ -1,19 +1,53 @@
 <div class="container">
-<div class="center jumbotron">
-  <h1>Course Selection System</h1>
+  <div class="center jumbotron">
+    <h1>Course Selection System</h1>
 
-  <h2>
-    This is the home page for Course Selection Part 1
-  </h2>
-  <% if logged_in? %>
-    <div class="btn-group btn-group-lg">
-      <%= link_to "Courses", courses_path, class: "btn btn-info" %>
-      <%= link_to "Subjects", subjects_path, class: "btn btn-info" %>
-      <%= link_to "Instructors", instructors_path, class: "btn btn-info" %>
-    </div>
+    <h2>
+      This is the home page for Course Selection Part 1
+    </h2>
+    <% if logged_in? %>
+      <div class="btn-group btn-group-lg">
+        <%= link_to "Courses", courses_path, class: "btn btn-info" %>
+        <%= link_to "Subjects", subjects_path, class: "btn btn-info" %>
+        <%= link_to "Instructors", instructors_path, class: "btn btn-info" %>
+      </div>
+    <% else %>
+      <%= link_to "Sign up", signup_path, class: "btn btn-info btn-lg" %>
+    <% end %>
+  </div>
+</div>
+
+<%# Show enrolled course if logged in %>
+<% if logged_in? %>
+  <%# If the user have not enrolled %>
+  <% if @courses.count == 0%>
+    <h1 class="adjust-context-center">You have not enrolled any courses!</h1>
   <% else %>
-    <%= link_to "Sign up", signup_path, class: "btn btn-info btn-lg" %>
-  <% end %>
+    <h1>Current Courses</h1>
+    <div class="table-responsive">
+      <table class="table table-hover">
+          <thead class="thead-dark">
+          <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Subjects</th>
+            <th>Description</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-</div>
-</div>
+        <tbody>
+          <% @courses.each do |course| %>
+            <tr>
+              <td><%= course.code %></td>
+              <td><%= course.name %></td>
+              <td><%= course.subjects_info %></td>
+              <td><%= course.description %></td>
+              <td><%= link_to 'Details', course %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% end %>
+<% end %>
