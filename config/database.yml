@@ -25,8 +25,8 @@ development:
   <<: *default
   database: sample_development
   host: localhost
-  username: sample
-  password: pwd1
+  username: wxxiao
+  password: 1827
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,8 +57,8 @@ test:
   <<: *default
   database: sample_test
   host: localhost
-  username: sample
-  password: pwd1
+  username: wxxiao
+  password: 1827
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
